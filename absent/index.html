@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang=ja>
+  <head>
+    <meta charset="utf-8">
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  	<link rel="stylesheet" href="jquery.datetimepicker.css">
+  	<script src="jquery.js"></script>
+    <script src="jquery.datetimepicker.full.min.js"></script>
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<title>出席管理アプリ</title>
+  </head>
+  <body>
+    <h1>出席管理アプリ(名前)</h1>
+    <h2>部活出席状況カレンダー</h2>
+
+    <h2>部活を休む連絡</h2>
+    <input type="text" id="datetimepicker"/>
+    
+    
+    
+    <footer class="footer">
+    	 <div class="container">
+    	   <p class="text-muted text-center">Copyright © 2018 yosukeimura All rights Reserved.</p>
+    	  </div>
+    	</footer>
+
+  <script>
+    $('#datetimepicker').datetimepicker();
+    $.datetimepicker.setLocale('ja');　　//<-これを追加 
+    $('#datetimepicker').datetimepicker();
+  </script>
+  </body>
+</html>

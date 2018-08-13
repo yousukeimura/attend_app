@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- calendar.css読み込み -->
+    <link rel="stylesheet" href="./css/calendar.css">
+    <!-- jquery1.7.1 を読み込む -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <!-- calendar.js読み込み -->
+    <script type="text/javascript" src="./js/calendar.js"></script>
+    
+    <title>カレンダー</title>
+    
+</head>
+<body  style="background-color: #f8f8f8;">
+
+    <!-- メインコンテンツ -->
+    <div class="ui main text container">
+        <h1>スケジュール</h1>
+
+        <div id="calendar">
+        </div>
+
+        <div style="margin-top: 20px;">
+            <button class="buck" type="button">＜</button>
+            <button class="next" type="button">＞</button>
+        </div>
+
+    </div><!-- メインコンテンツ閉じ -->
+
+</body>
+<script type="text/javascript">
+    $(function(){
+        var myDate = new Date();
+        var myYear = myDate.getFullYear();	// 年を取得    
+        var MyMonth = myDate.getMonth();	// 月を取得(0月～11月)
+        setCalender(myYear,MyMonth);
+
+        $('.next').click(function(){
+
+            MyMonth++;
+            if(MyMonth == 12){
+                MyMonth = 0;
+                myYear++;
+            }
+            $('#calendar').empty();
+            $('#calendar').text(setCalender(myYear,MyMonth));
+        });
+
+        $('.buck').click(function(){
+
+            MyMonth--;
+            if(MyMonth == -1){
+                MyMonth = 11;
+                myYear--;
+            }
+            $('#calendar').empty();
+            $('#calendar').text(setCalender(myYear,MyMonth));
+        });
+    });
+</script>
+</html>

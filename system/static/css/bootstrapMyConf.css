@@ -1,0 +1,44 @@
+.main{
+	padding-bottom: 60px;
+}
+
+.addForm{
+	margin-right: 50px
+}
+
+.container {
+	max-width: 100%;
+}
+
+
+hr {
+	height: 1px;
+	background-color: #AAAAAA;
+}
+
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > th {
+  vertical-align: middle;
+	table-layout: fixed;
+  text-align: center;
+}
+
+<<<<<<< HEAD
+.test {
+	padding:20px; 
+	color: #FFFFFF;
+	background-color: #45C505;
+	border-radius: 10px;
+	display: inline-block;
+}
+
+=======
+>>>>>>> 80bc2f5728b4b5dc2a827c022eda1fe7c6168082
+
+
+.topLink {color: #333333;
+  text-decoration: none;
+}
+.topLink:hover {color: #333333;
+}

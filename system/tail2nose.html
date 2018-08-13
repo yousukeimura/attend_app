@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang=ja  dir="ltr">
+  <head>
+    <meta charset="utf-8">
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<title>情報システム開発演習</title>
+  	<link href="./static/css/sticky-footer.css" rel="stylesheet">
+  	<link href="./static/css/bootstrap.min.css" rel="stylesheet">
+  	<link href="./static/css/bootstrapMyConf.css" rel="stylesheet">
+    
+  	<!--[if lt IE 9]>
+  		<script src="/static/js/IE9/html5shiv.min.js"></script>
+  		<script src="/static/js/IE9/respond.min.js"></script>
+  	
+  	<![endif]-->
+  	
+  	
+  	
+  </head>
+  <body>
+
+    	<script src="./static/js/jquery.min.js"></script>
+    	<script src="./static/js/bootstrap.min.js"></script>
+      <script src="./static/js/get_dic_level.js"></script>
+      
+    	<div class="container">
+    		<div class="page-header topLink">
+    				<h1>情報システム開発演習<small> WEB Application</small></h1>
+    		</div>
+
+
+
+
+    		<div class="panel panel-default">
+
+    			<div class="panel-body">
+            <h3>しりとりの表示場所<small> WEB Application</small></h3><br>
+    			</div>
+    		</div>
+
+
+
+    		<!-- 設定モーダル -->
+    		<div class="modal" id="profileModal" tabindex="-1">
+    			<div class="modal-dialog modal-lg">
+    				<div class="modal-content">
+    					<div class="modal-header">
+    						<h4 class="modal-title">しりとりの設定</h4>
+    					</div>
+    					<div class="modal-body">
+                <h3>辞書の選択</h3>
+                <div class="btn-group" data-toggle="buttons">
+	                 <label class="btn btn-default active" id="dic0">
+                     <input type="radio" autocomplete="off" checked> 国立国語研究所辞書
+                   </label>
+	                 <label class="btn btn-default" id="dic1">
+		                 <input type="radio" autocomplete="off"> ニコニコ大百科辞書
+                   </label>
+                </div>
+                <hr>
+                <h3>難易度の選択</h3>
+                <div class="btn-group" data-toggle="buttons">
+	                 <label class="btn btn-info active" id="lev0">
+                     <input type="radio" autocomplete="off" checked> やさしい
+                   </label>
+	                 <label class="btn btn-warning" id="lev1">
+		                 <input type="radio" autocomplete="off"> ふつう
+                   </label>
+                   <label class="btn btn-default" id="lev2">
+                     <input type="radio" autocomplete="off"> むずかしい
+                    </label>
+                    <label class="btn btn-default" id="lev3">
+                      <input type="radio" autocomplete="off"> エンドレス
+                    </label>
+                </div>
+                <hr>
+                その他追加ルール
+                <hr>
+    						<div id="dataNum"></div>
+
+    						<button id="learnBtn" type="button" data-dismiss="modal" class="btn btn-success  btn-block" onClick="show()">この設定ではじめる</button>
+    						<button id="cancel" type="button"  class="btn btn-danger btn-block" onclick="location.href='./index.html'">トップに戻る</button>
+
+    						<div id="fListTable"></div>
+    					</div>
+    				</div>
+    			</div>
+    		</div>
+    		<!-- /削除モーダル -->
+
+
+
+
+    	</div>
+
+    	<footer class="footer">
+    	  <div class="container">
+    	    <p class="text-muted text-center">Copyright © 2018 情報システム開発演習チームE All rights Reserved.</p>
+    	  </div>
+    	</footer>
+
+
+  </body>
+  <script>
+
+  $(function(){
+    $(window).on('load',function(){
+      $('#profileModal').modal(
+			     {backdrop: "static",}
+		  );
+      window.onbeforeunload = function(event){
+        event = event || window.event;
+        event.returnValue = 'ページから移動しますか？';
+      }
+    });
+  })
+
+
+  </script>
+
+</html>
